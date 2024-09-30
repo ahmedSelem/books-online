@@ -2,3 +2,20 @@
 @import 'tailwindcss/base';
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
+
+
+@font-face {
+    src: url('/assets/fonts/Tajawal-Regular.ttf');
+    font-family: Tajawal;
+}
+
+:root {
+    --mainFont: Tajawal;
+    --mainColor: #2ecc71
+}
+
+
+
+* {
+    font-family: var(--mainFont);
+}

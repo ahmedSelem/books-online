@@ -1,0 +1,37 @@
+<div class="border border-slate-300 p-3 rounded hover:shadow-lg transition-all">
+  <div class="flex items-center">
+    <a href="">
+      <img
+        src="https://covers.openlibrary.org/b/id/{{
+          bookItem()?.cover_id
+        }}-L.jpg"
+        class="h-10 w-24 max-w-10 me-3"
+        alt="Cover"
+      />
+    </a>
+    <ul class="flex flex-col overflow-hidden">
+      <li class="text-zinc-600">
+        {{ bookItem()?.first_publish_year }}
+      </li>
+      <li class="truncate w-full font-bold">
+        <a href="" [title]="bookItem()?.title">
+          {{ bookItem()?.title }}
+        </a>
+      </li>
+      <li class="text-neutral-500">
+        <a href="">
+          {{ bookItem()?.author_names }}
+        </a>
+      </li>
+    </ul>
+  </div>
+  <div class="flex justify-end mt-3">
+    <a
+      href=""
+      class="pe-3 relative after:content[''] after:absolute after:w-[1px] after:h-4 after:right-0 after:top-1/2 after:-translate-y-1/2 after:bg-slate-300 hover:text-primary"
+    >
+      more
+    </a>
+    <a href="" class="ms-3 hover:text-primary"> wishlist </a>
+  </div>
+</div>

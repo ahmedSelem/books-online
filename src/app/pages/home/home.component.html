@@ -1,1 +1,10 @@
-<h3 class="text-center">Test</h3>
+<section class="p-6 w-4/5 m-auto">
+  <h1 class="font-bold text-2xl capitalize">
+    subject: <strong class="text-primary">finance</strong>
+  </h1>
+  <div class="mt-4 grid gap-3 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+    @for (book of AllBooks(); track $index) {
+      <app-book-item [bookItem]="book.work" />
+    }
+  </div>
+</section>
