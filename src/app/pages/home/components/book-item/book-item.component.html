@@ -1,6 +1,6 @@
 <div class="border border-slate-300 p-3 rounded hover:shadow-lg transition-all">
   <div class="flex items-center">
-    <a href="">
+    <a (click)="navigateToDetails(bookItem()!.key)" class="cursor-pointer">
       <img
         src="https://covers.openlibrary.org/b/id/{{
           bookItem()?.cover_id
@@ -14,7 +14,11 @@
         {{ bookItem()?.first_publish_year }}
       </li>
       <li class="truncate w-full font-bold">
-        <a href="" [title]="bookItem()?.title">
+        <a
+          (click)="navigateToDetails(bookItem()!.key)"
+          class="cursor-pointer"
+          [title]="bookItem()?.title"
+        >
           {{ bookItem()?.title }}
         </a>
       </li>

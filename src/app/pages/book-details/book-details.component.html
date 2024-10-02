@@ -1,0 +1,55 @@
+@if (bookDetails().length) {
+  <section class="p-6 w-11/12 md:w-4/5 m-auto flex">
+    @let CoverID =
+      bookDetails()[0].covers
+        ? bookDetails()[0].covers[0]
+        : bookDetails()[1].covers
+          ? bookDetails()[1].covers[0]
+          : undefined;
+    @if (CoverID) {
+      @let coverURL =
+        "https://covers.openlibrary.org/b/id/" + CoverID + "-L.jpg";
+      <img [src]="coverURL" />
+    } @else {
+      <img src="assets/placeholder.jpg" class="w-1/3" />
+    }
+
+    <div class="flex flex-col ps-5">
+      <ul>
+        <li></li>
+        <li class="capitalize text-xl">
+          pubish Year: <strong>{{ bookDetails()[0].publish_date }}</strong>
+        </li>
+        <li class="font-bold text-2xl">
+          @let title =
+            bookDetails()[0].title
+              ? bookDetails()[0].title
+              : bookDetails()[1].full_title;
+          {{ title }}
+        </li>
+        <li class="mb-4">
+          @let description =
+            bookDetails()[1] && bookDetails()[1].description
+              ? bookDetails()[1].description.value
+              : bookDetails()[0].description
+                ? bookDetails()[0].description.value
+                : undefined;
+          {{ description }}
+        </li>
+        <li>
+          @let numberPages =
+            bookDetails()[0].number_of_pages
+              ? bookDetails()[0].number_of_pages
+              : bookDetails()[1] && bookDetails()[1].number_of_pages
+                ? bookDetails()[1].number_of_pages
+                : undefined;
+          Number of Pages:
+          <strong>{{ numberPages }}</strong>
+        </li>
+      </ul>
+      <button class="bg-primary rounded py-3 capitalize mt-3 w-48 text-white">
+        add to wishlist
+      </button>
+    </div>
+  </section>
+}

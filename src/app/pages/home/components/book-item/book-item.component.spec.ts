@@ -12,7 +12,7 @@ describe('BookItemComponent', () => {
     await TestBed.configureTestingModule({
       imports: [BookItemComponent],
 
-      providers:  [, provideHttpClientTesting(), provideHttpClient()]
+      providers: [, provideHttpClientTesting(), provideHttpClient()],
     }).compileComponents();
 
     fixture = TestBed.createComponent(BookItemComponent);

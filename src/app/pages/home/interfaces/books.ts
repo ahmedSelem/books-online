@@ -16,6 +16,7 @@ export interface Work {
   cover_edition_key: string;
   cover_id: string;
   edition_key: string[];
+  key: string;
   first_publish_year: string;
   title: string;
 }

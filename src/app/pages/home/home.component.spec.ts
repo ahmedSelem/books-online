@@ -12,8 +12,7 @@ describe('HomeComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [HomeComponent],
-      providers:  [HomeService, provideHttpClientTesting(), provideHttpClient()]
-
+      providers: [HomeService, provideHttpClientTesting(), provideHttpClient()],
     }).compileComponents();
 
     fixture = TestBed.createComponent(HomeComponent);
